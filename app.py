@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, render_template
 from flask_caching import Cache
 import requests
 from datetime import datetime
+import os
 
 app = Flask(__name__)
 
@@ -11,13 +12,16 @@ cache = Cache(app)
 
 def get_data_from_api(tech_stack, page):
     url = "https://api.scrapingdog.com/linkedinjobs/"
+    api_key = os.getenv("SCRAPINGDOG_API_KEY")
+    if not api_key:
+        raise ValueError("Missing SCRAPINGDOG_API_KEY in environment variables")
+    
     params = {
-        "api_key": "681625283cfa3b66a1de3352",
+        "api_key": api_key,
         "field": tech_stack,
         "geoid": 92000000,
         "page": page
     }
-
     response = requests.get(url, params=params)
 
     if response.status_code == 200:

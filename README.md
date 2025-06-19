@@ -1,3 +1,4 @@
+
 # 🔍 Tech Job Finder
 
 **Tech Job Finder** is a Flask-based web application that helps identify companies actively using a specified technology stack by analyzing job listings. Users input a tech keyword (like `Python`, `Kafka`, or `Kubernetes`), and the app fetches job postings from LinkedIn (via the ScrapingDog API) and displays key job and company details in a clean, interactive interface.
@@ -23,28 +24,21 @@
 
 ---
 
-## Install dependencies
+## 🚀 Live App
 
-pip install -r requirements.txt
-
----
-
-## Run the app
-
-python .\\app.py
+👉 [Click here to use Tech Job Finder](https://tech-job-finder.onrender.com)
 
 ---
 
+## 🛠 Deployment
 
-## Open your browser and go to
-
-(http://127.0.0.1:5000/)
+This app is hosted on [Render](https://render.com), automatically deployed from the GitHub repository.
 
 ---
 
-## ⚙️ Configuration
+## 🔐 API Key Handling
 
-"api_key": "681625283cfa3b66a1de3352"
+API key for the ScrapingDog LinkedIn Jobs API is stored securely using Render's environment variables.
 
 ---
 
@@ -83,5 +77,3 @@ The system consists of:
 1. **Frontend**: HTML, CSS, and JavaScript for a clean UI.
 2. **Backend**: Flask server, which connects to the ScrapingDog API and returns job listings.
 3. **Caching**: Using Flask-Caching for improved performance and reduced load.
-
-
